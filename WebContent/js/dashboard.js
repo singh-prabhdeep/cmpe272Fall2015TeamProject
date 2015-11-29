@@ -4,7 +4,7 @@ var radarChartData;
 		var randomScalingFactor = function(){ return Math.round(Math.random()*200)};
 		ajaxObj = {
 				type : "GET",
-				url : "http://localhost:8080/cmpe272/crimewatch/topincidents/getmonthlyincidents",
+				url : baseURL +"/cmpe272/crimewatch/topincidents/getmonthlyincidents",
 				contentType : "application/json",
 				error : function(jqXHR, textStatus, errorThrown) {
 					console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -48,7 +48,7 @@ var radarChartData;
 		console.log("hi");
 		ajaxObj = {
 			type : "GET",
-			url : "http://localhost:8080/cmpe272/crimewatch/topincidents/gettopdays",
+			url : baseURL +"/cmpe272/crimewatch/topincidents/gettopdays",
 			contentType : "application/json",
 			error : function(jqXHR, textStatus, errorThrown) {
 				console.log("Error " + jqXHR.getAllResponseHeaders() + " "
