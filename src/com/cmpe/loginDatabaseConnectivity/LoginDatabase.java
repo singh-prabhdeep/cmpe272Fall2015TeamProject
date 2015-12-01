@@ -38,6 +38,10 @@ public class LoginDatabase {
 			e.printStackTrace();
 		}
 	}
+	
+	public Connection getConn() {
+		return conn;
+	}
 
 	public boolean validate(String username, String password) {
 

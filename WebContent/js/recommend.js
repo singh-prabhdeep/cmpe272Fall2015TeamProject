@@ -58,7 +58,7 @@ function initialize() {
 	}
 function updatemap(inputAddress)
 {
-	var loc
+	var loc;
 	geocoder = new google.maps.Geocoder();
 	geocoder.geocode({
 	    "address": inputAddress
