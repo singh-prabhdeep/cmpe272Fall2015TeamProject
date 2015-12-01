@@ -6,6 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class LoginDatabase {
 	private Connection conn;
@@ -86,5 +90,129 @@ public class LoginDatabase {
 		}
 		
 		return status;
+	}
+	
+	public ArrayList<String> getDistinctCategories() {
+
+	    Statement stmt = null;
+	    String query = "SELECT DISTINCT(CATEGORY) FROM customizedsearchcrimedata";
+        ArrayList<String> list = new ArrayList<String>();
+        
+	    try {
+	        stmt = conn.createStatement();
+	        ResultSet rs = stmt.executeQuery(query);
+	        while (rs.next()) {
+	            String category = rs.getString("CATEGORY");
+	            list.add(category);
+	        }
+	    } catch (SQLException e ) {
+	    	e.printStackTrace();
+	        //JDBCTutorialUtilities.printSQLException(e);
+	    } finally {
+	        if (stmt != null) { try {
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} }
+	    }
+	    
+	    return list;
+	}
+	
+	
+	public ArrayList<String> getDistinctYears() {
+
+	    Statement stmt = null;
+	    String query = "SELECT DISTINCT(YEAR) FROM customizedsearchcrimedata";
+        ArrayList<String> list = new ArrayList<String>();
+        
+	    try {
+	        stmt = conn.createStatement();
+	        ResultSet rs = stmt.executeQuery(query);
+	        while (rs.next()) {
+	            String category = rs.getString("YEAR");
+	            list.add(category);
+	        }
+	    } catch (SQLException e ) {
+	    	e.printStackTrace();
+	        //JDBCTutorialUtilities.printSQLException(e);
+	    } finally {
+	        if (stmt != null) { try {
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} }
+	    }
+	    
+	    return list;
+	}
+	
+	
+	public ArrayList<String> getDistinctMonths() {
+	    Statement stmt = null;
+	    String query = "SELECT DISTINCT(MONTH) FROM customizedsearchcrimedata";
+        ArrayList<String> list = new ArrayList<String>();
+        
+	    try {
+	        stmt = conn.createStatement();
+	        ResultSet rs = stmt.executeQuery(query);
+	        while (rs.next()) {
+	            String category = rs.getString("MONTH");
+	            list.add(category);
+	        }
+	    } catch (SQLException e ) {
+	    	e.printStackTrace();
+	        //JDBCTutorialUtilities.printSQLException(e);
+	    } finally {
+	        if (stmt != null) { try {
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} }
+	    }
+	    
+	    return list;
+	}
+
+	public String getLongLatOfLocations(String year, String month, String category) {
+		String toRet = "";
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+
+		try {
+			pst = conn.prepareStatement("select X,Y from cmpe272_fall2015_finalproj.customizedsearchcrimedata WHERE CATEGORY = ? AND MONTH = ? AND YEAR = ?");
+			pst.setString(1, category);
+			pst.setString(2, month);
+			pst.setString(3, year);
+			
+			System.out.println(pst.toString());
+			JSONArray jarray = new JSONArray();
+			rs = pst.executeQuery();
+			while(rs.next())
+			{
+				JSONObject row = new JSONObject();
+				row.put("longitude", rs.getString(1));
+				row.put("latitude", rs.getString(2));
+				jarray.put(row);
+			}
+			toRet = jarray.toString();
+			System.out.println("DATA IN DATABASE");
+			System.out.println(toRet);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+	        if (pst != null) { try {
+	        	pst.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} }
+		}
+		
+		return toRet ;
 	}
 }

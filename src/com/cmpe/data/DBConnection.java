@@ -13,7 +13,7 @@ public class DBConnection {
 		String dbName = "cmpe272_fall2015_finalproj";
 		String driver = "com.mysql.jdbc.Driver";
 		String userName = "root";
-		String password = "admin";
+		String password = "";
 
 		try {
 			Class.forName(driver).newInstance();
