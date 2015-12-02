@@ -2,6 +2,10 @@
 <html>
 <head>
 <title>Visualize Locations</title>
+<% String isLoggedIn = (String)session.getAttribute("isLoggedIn"); 
+ if(isLoggedIn != "user")
+ 	response.sendRedirect("index.jsp");
+%>
 <script type="text/javascript" src="js/jquery-min.js"></script>
 <script type="text/javascript" src="js/polyfill.js"></script>
 <script src="js/hostfile.js"></script>
@@ -22,14 +26,6 @@
 	href="css/maps/jquery-jvectormap-2.0.1.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
-
-
-<style>
-canvas {
-	
-}
-</style>
-
 <style type="text/css">
 .map_container{
     position: relative;

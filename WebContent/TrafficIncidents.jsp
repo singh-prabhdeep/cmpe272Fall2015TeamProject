@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Traffic Incidents</title>
 <script type="text/javascript" src="js/jquery-min.js"></script>
 <script type="text/javascript" src="js/polyfill.js"></script>
 <script type="text/javascript" src="js/hostfile.js"></script>
@@ -39,7 +39,10 @@
     padding: 0;
 }
 </style>
-
+<% String isLoggedIn = (String)session.getAttribute("isLoggedIn"); 
+ if(isLoggedIn != "user")
+ 	response.sendRedirect("index.jsp");
+%>
 </head>
 <body class="nav-md">
 

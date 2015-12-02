@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
     <head>
@@ -29,6 +29,10 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
 
+<% String isLoggedIn = (String)session.getAttribute("isLoggedIn"); 
+ if(isLoggedIn == "user")
+ 	response.sendRedirect("welcome.jsp");
+%>
     </head>
 
     <body>
@@ -69,6 +73,12 @@
 			                        	<label class="sr-only" for="form-password">Password</label>
 			                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
 			                        </div>
+			                        <% if(null!=request.getAttribute("message")) { %>
+			                        	<div class="alert alert-success" id="logout_message">${message}</div>
+			                        <% } %>
+			                        <% if(null!=request.getAttribute("invalid")) { %>
+			                        	<div class="alert alert-danger" id="invalid_message">${invalid}</div>
+			                        <% } %>
 			                        <button type="submit" class="btn">Sign in!</button>
 			                    </form>
 		                    </div>
@@ -85,6 +95,14 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="js/jquery.backstretch.min.js"></script>
         <script src="js/scripts.js"></script>
+        <script>
+        	setTimeout(fade_out, 2000);
+
+			function fade_out() {
+			  $("#invalid_message").fadeOut().empty();
+			  $("#logout_message").fadeOut().empty();
+			}
+        </script>
         
         <!--[if lt IE 10]>
             <script src="js/placeholder.js"></script>

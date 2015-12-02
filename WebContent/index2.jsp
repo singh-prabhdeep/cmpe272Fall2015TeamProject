@@ -24,7 +24,10 @@
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 
-
+<% String isLoggedIn = (String)session.getAttribute("isLoggedIn"); 
+ if(isLoggedIn != "user")
+ 	response.sendRedirect("index.jsp");
+%>
 </head>
 <body>
 <body class="nav-md">

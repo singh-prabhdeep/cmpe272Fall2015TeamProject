@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Radar Chart</title>
+<title>SF Crime and Traffic Analytics</title>
 <script src="js/hostfile.js"></script>
 <script type="text/javascript" src="js/jquery-min.js"></script>
 <script src="js/chartjs/chart.min.js"></script>
@@ -25,12 +25,11 @@
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 
-<style>
-canvas {
-	
-}
-</style>
 <script src="js/dashboard.js"></script>
+<% String isLoggedIn = (String)session.getAttribute("isLoggedIn"); 
+ if(isLoggedIn != "user")
+ 	response.sendRedirect("index.jsp");
+%>
 </head>
 <body>
 <body class="nav-md">
@@ -119,7 +118,7 @@ canvas {
 											class="badge bg-red pull-right">50%</span> <span>Settings</span>
 									</a></li>
 									<li><a href="javascript:;">Help</a></li>
-									<li><a href="login.html"><i
+									<li><a href="logout"><i
 											class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 								</ul></li>
 
