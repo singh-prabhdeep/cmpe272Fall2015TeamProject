@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.cmpe.login.PasswordEncrypt;
+
 public class LoginDatabase {
 	private Connection conn;
 	
@@ -57,7 +59,12 @@ public class LoginDatabase {
 			System.out.println(conn);
 			pst = conn.prepareStatement("select * from cmpe272_fall2015_finalproj.credentials where username=? and password=?");
 			pst.setString(1, username);
-			pst.setString(2, password);
+			
+			//hash pass and then compare to the entry in DB
+			String hashedPass = PasswordEncrypt.sha256(password);
+			System.out.println(password);
+			System.out.println(hashedPass);
+			pst.setString(2, hashedPass);
 
 			rs = pst.executeQuery();
 			status = rs.next();
