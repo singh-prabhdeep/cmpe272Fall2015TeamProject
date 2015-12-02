@@ -5,7 +5,7 @@ window.onload = function() {
 
 	ajaxObj = {
 		type : "GET",
-		url : "http://localhost:8080/cmpe272/crimewatch/topincidents/yearly",
+		url :  baseURL +"/cmpe272/crimewatch/topincidents/yearly",
 		contentType : "application/json",
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -38,7 +38,7 @@ window.onload = function() {
 
 	ajaxObj = {
 		type : "GET",
-		url : "http://localhost:8080/cmpe272/crimewatch/topincidents/getTopCategory",
+		url :  baseURL +"/cmpe272/crimewatch/topincidents/getTopCategory",
 		contentType : "application/json",
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("Error " + jqXHR.getAllResponseHeaders() + " "

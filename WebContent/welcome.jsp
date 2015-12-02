@@ -24,7 +24,7 @@
 	href="css/maps/jquery-jvectormap-2.0.1.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
-
+<script src="js/hostfile.js"></script>
 <script src="js/dashboard.js"></script>
 <% String isLoggedIn = (String)session.getAttribute("isLoggedIn"); 
  if(isLoggedIn != "user")

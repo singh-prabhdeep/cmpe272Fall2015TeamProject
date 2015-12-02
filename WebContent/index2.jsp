@@ -8,6 +8,7 @@
 <script type="text/javascript" src="js/polyfill.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-table.min.js"></script>
+<script src="js/hostfile.js"></script>
 <script src="js/dashboard1.js"></script>
 <meta name="viewport" content="initial-scale = 1, user-scalable = no">
 <!-- Bootstrap core CSS -->
@@ -72,6 +73,7 @@
 								<li><a href="recomendationPage.jsp"><i class="fa fa-gears"></i>Recommend Enforcement</a></li>
 								<li><a href="customizedSearch.jsp"><i class="fa fa-search"></i> Incident Search </a></li>
 								<li><a href="TrafficIncidents.jsp"><i class="fa fa-map-marker"></i> Traffic Incidents </a></li>
+								</ul>
 						</div>
 
 

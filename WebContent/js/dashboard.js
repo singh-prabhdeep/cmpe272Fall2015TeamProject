@@ -8,7 +8,7 @@ window.onload = function() {
 	
 	ajaxObj = {
 			type : "GET",
-			url : "http://localhost:8080/cmpe272/crimewatch/topincidents/getTopCategory/6",
+			url : baseURL +"/cmpe272/crimewatch/topincidents/getTopCategory/6",
 			contentType : "application/json",
 			error : function(jqXHR, textStatus, errorThrown) {
 				console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -50,7 +50,7 @@ window.onload = function() {
 	
 	ajaxObj = {
 			type : "GET",
-			url : "http://localhost:8080/cmpe272/crimewatch/topincidents/hourlyincidents",
+			url :  baseURL +"/cmpe272/crimewatch/topincidents/hourlyincidents",
 			contentType : "application/json",
 			error : function(jqXHR, textStatus, errorThrown) {
 				console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -86,7 +86,7 @@ window.onload = function() {
 	
 	ajaxObj = {
 		type : "GET",
-		url : "http://localhost:8080/cmpe272/crimewatch/topincidents/getmonthlyincidents",
+		url :  baseURL +"/cmpe272/crimewatch/topincidents/getmonthlyincidents",
 		contentType : "application/json",
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -126,7 +126,7 @@ window.onload = function() {
 
 	ajaxObj = {
 		type : "GET",
-		url : "http://localhost:8080/cmpe272/crimewatch/topincidents/gettopdays",
+		url :  baseURL +"/cmpe272/crimewatch/topincidents/gettopdays",
 		contentType : "application/json",
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -161,7 +161,7 @@ window.onload = function() {
 
 	ajaxObj = {
 		type : "GET",
-		url : "http://localhost:8080/cmpe272/crimewatch/topincidents/totalincidents",
+		url :  baseURL +"/cmpe272/crimewatch/topincidents/totalincidents",
 		contentType : "application/text; charset=utf-8",
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -178,7 +178,7 @@ window.onload = function() {
 
 	ajaxObj = {
 		type : "GET",
-		url : "http://localhost:8080/cmpe272/crimewatch/topincidents/totaltrafficincidents",
+		url :  baseURL +"/cmpe272/crimewatch/topincidents/totaltrafficincidents",
 		contentType : "application/text; charset=utf-8",
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -196,7 +196,7 @@ window.onload = function() {
 
 	ajaxObj = {
 		type : "GET",
-		url : "http://localhost:8080/cmpe272/crimewatch/topincidents/drivinginfluence",
+		url :  baseURL +"/cmpe272/crimewatch/topincidents/drivinginfluence",
 		contentType : "application/text; charset=utf-8",
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -214,7 +214,7 @@ window.onload = function() {
 	
 	ajaxObj = {
 			type : "GET",
-			url : "http://localhost:8080/cmpe272/crimewatch/topincidents/yearly/2015",
+			url :  baseURL +"/cmpe272/crimewatch/topincidents/yearly/2015",
 			contentType : "application/json",
 			error : function(jqXHR, textStatus, errorThrown) {
 				console.log("Error " + jqXHR.getAllResponseHeaders() + " "
@@ -255,7 +255,7 @@ $(document).ready(function(){
     	year = this.id;
     	ajaxObj = {
     			type : "GET",
-    			url : "http://localhost:8080/cmpe272/crimewatch/topincidents/yearly/"+year,
+    			url :  baseURL +"/cmpe272/crimewatch/topincidents/yearly/"+year,
     			contentType : "application/json",
     			error : function(jqXHR, textStatus, errorThrown) {
     				console.log("Error " + jqXHR.getAllResponseHeaders() + " "
