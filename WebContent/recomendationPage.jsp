@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <script type="text/javascript" src="js/jquery-min.js"></script>
 <script type="text/javascript" src="js/polyfill.js"></script>
 <script type="text/javascript" src="js/hostfile.js"></script>
+<script type="text/javascript" src="js/recommend.js"></script>
+
 <!-- Bootstrap core CSS -->
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,8 +23,6 @@
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
-<script  type="text/javascript" src="js/trafficincidents.js"></script>
 
 <style type="text/css">
 .map_container{
@@ -52,7 +53,7 @@
 				<div class="left_col scroll-view">
 
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="index.html" class="site_title"><i
+						<a href="index.jsp" class="site_title"><i
 							class="fa fa-crosshairs"></i> <span>Crime Watch</span></a>
 					</div>
 					<div class="clearfix"></div>
@@ -144,74 +145,57 @@
 			</div>
 			<!-- /top navigation -->
 			<div class="right_col" role="main">
-			<div class="row">
-			<h4>Search Parameters </h4>
-                            
-                            <form class="form-inline" action="#" method="post" id="traffic_form">
-                                <div class="form-group col-md-6">
-                                    <label for="ex3">Road Condition</label>
-                                    <select class="form-control" id="road_condition" name="road_condition" >
-                                    	<option value="0">None</option>
-                                    	<option value="1">Dry</option>
-                                    	<option value="2">Wet</option>
-                                    	<option value="3">Snow</option>
-                                    	<option value="4">Frost</option>
-                                    	<option value="5">Flood</option>
-                                    	<option value="6">Oil</option>
-                                    	<option value="7">Mud</option>
-                                    </select>
+				<div class="row">
+					<div class="col-md-6 col-xs-12">
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>
+									Recommend Enfocement Locations <small>Enter time in 24-hour format</small>
+								</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<br />
+								<form class="form-horizontal form-label-left input_mask" action="#" method="post" id="form_hour">
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12">Hour: </label>
+										<div class="col-md-9 col-sm-9 col-xs-12">
+											<input type="text" class="form-control has-feedback-left"
+											id="hour_day" name="hour_day" placeholder="Hour of the Day"> <span
+											class="fa fa-clock-o form-control-feedback left"
+											aria-hidden="true"></span>
+										</div>
+									</div>
+									<div class="form-group"></div>
+									<div class="ln_solid"></div>
+									<div class="form-group">
+										<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-4">
+											<button class="btn btn-success" type="submit" id="submit_hour">Submit</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>System Recommendations</h2>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content" id="article_id">
                                     
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="ex4">Weather Condtion</label>
-                                    <select class="form-control" id="weather_condition" name="weather_condition">
-                                    	<option value="0">None</option>
-                                    	<option value="1">Fine-No High Winds</option>
-                                    	<option value="2">Rainning-No High Winds</option>
-                                    	<option value="3">Snowing-No High Winds</option>
-                                    	<option value="4">Fine-High Winds</option>
-                                    	<option value="5">Rainning-High Winds</option>
-                                    	<option value="6">Snowing-High Winds</option>
-                                    	<option value="7">Fog or Mist</option>
-                                    </select>
-                                </div> 
-                                <div class="form-group col-md-6">
-                                    <label for="ex5">Lighting Condition</label>
-                                    <select class="form-control" id="light_condition" name="light_condition">
-                                    	<option value="0">None</option>
-                                    	<option value="1">Day Light</option>
-                                    	
-                                    	<option value="4">Darkness-lights lit</option>
-                                    	<option value="5">Darkness-lights unlit</option>
-                                    	<option value="6">Darkness-no lighting</option>
-                                    	<option value="7">Darkness-lighting unknown</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="ex6">Special Conditions</label>
-                                    <select class="form-control" id="special_condition" name="special_condition">
-                                    	<option value="0">None</option>
-                                    	<option value="1">Auto traffic signal-out</option>
-                                    	<option value="2">Auto traffic signal-defective</option>
-                                    	<option value="3">Road sign defective or obscure</option>
-                                    	<option value="4">Roadworks</option>
-                                    	<option value="5">Road surface defective</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-12">  
-                                <button type="submit" class="btn btn-primary" id="search_btn">Search</button>
-                                <button type="button" class="btn btn-default" id="reset_btn">Reset</button>
-                                </div> 
-                            </form>
-			</div>
-			<div class="row">
+                            </div>
+                        </div>
+				</div>
+				<div class="row">
 				<div  id="mymap" class="map_container"></div>
 				</div>
+				<div class="row"></div>
 			</div>
-			
-			</div>
-			</div>
-			
-
+		</div>
+	</div>
 </body>
+
 </html>

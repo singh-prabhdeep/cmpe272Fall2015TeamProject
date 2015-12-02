@@ -5,10 +5,10 @@
 <script type="text/javascript" src="js/jquery-min.js"></script>
 <script src="js/chartjs/chart.min.js"></script>
 <script src="js/Chart.js"></script>
-<script src="js/echart/echarts-all.js"></script>
-<script src="js/echart/green.js"></script>
 <script type="text/javascript" src="js/polyfill.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.min.js"></script>
+<script src="js/dashboard1.js"></script>
 <meta name="viewport" content="initial-scale = 1, user-scalable = no">
 <!-- Bootstrap core CSS -->
 
@@ -24,12 +24,7 @@
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 
-<style>
-canvas {
-	
-}
-</style>
-<script src="js/dashboard1.js"></script>
+
 </head>
 <body>
 <body class="nav-md">
@@ -43,7 +38,7 @@ canvas {
 				<div class="left_col scroll-view">
 
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="index.html" class="site_title"><i
+						<a href="index.jsp" class="site_title"><i
 							class="fa fa-crosshairs"></i> <span>Crime Watch</span></a>
 					</div>
 					<div class="clearfix"></div>
@@ -178,15 +173,26 @@ canvas {
 
 			<div class="right_col" role="main">
 
-				
 				<div class="col-md-12 col-sm-6 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Total Incidents per Year</h2>
+                                    <h2>Incidents Categories </h2>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <canvas id="canvas_bar"></canvas>
+                                    <table class="table table-hover" id="category_table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Incident Category</th>
+                                                <th>Number of Incidents</th>
+                                            </tr>
+                                        </thead>
+                                       
+                                        
+                                        
+                                    </table>
+
                                 </div>
                             </div>
                         </div>
@@ -199,8 +205,6 @@ canvas {
 			</div>
 		</div>
 	</div>
-
-
 
 </body>
 </html>

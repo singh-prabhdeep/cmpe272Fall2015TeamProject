@@ -59,7 +59,7 @@ canvas {
 				<div class="left_col scroll-view">
 
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="index.html" class="site_title"><i
+						<a href="index.jsp" class="site_title"><i
 							class="fa fa-crosshairs"></i> <span>Crime Watch</span></a>
 					</div>
 					<div class="clearfix"></div>

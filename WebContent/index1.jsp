@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
+<title>Radar Chart</title>
 <script type="text/javascript" src="js/jquery-min.js"></script>
+<script src="js/chartjs/chart.min.js"></script>
+<script src="js/Chart.js"></script>
+<script src="js/echart/echarts-all.js"></script>
+<script src="js/echart/green.js"></script>
 <script type="text/javascript" src="js/polyfill.js"></script>
-<script type="text/javascript" src="js/hostfile.js"></script>
-<script type="text/javascript" src="js/recommend.js"></script>
-
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<meta name="viewport" content="initial-scale = 1, user-scalable = no">
 <!-- Bootstrap core CSS -->
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,26 +23,15 @@
 	href="css/maps/jquery-jvectormap-2.0.1.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
-<style type="text/css">
-.map_container{
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
-}
-.map_container .map_canvas{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
+<style>
+canvas {
+	
 }
 </style>
-
+<script src="js/dashboard1.js"></script>
 </head>
+<body>
 <body class="nav-md">
 
 	<div class="container body">
@@ -53,7 +43,7 @@
 				<div class="left_col scroll-view">
 
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="index.html" class="site_title"><i
+						<a href="index.jsp" class="site_title"><i
 							class="fa fa-crosshairs"></i> <span>Crime Watch</span></a>
 					</div>
 					<div class="clearfix"></div>
@@ -112,7 +102,7 @@
 				<div class="nav_menu">
 					<nav class="" role="navigation">
 						<div class="nav toggle">
-							<a id="menu_toggle"><i class="fa fa-bars"></i></a>
+							<a id="menu_toggle" href="welcome.jsp"><i class="fa fa-arrow-circle-left">Back</i></a>
 						</div>
 
 						<ul class="nav navbar-nav navbar-right">
@@ -136,7 +126,46 @@
 								href="javascript:;" class="dropdown-toggle info-number"
 								data-toggle="dropdown" aria-expanded="false"> <i
 									class="fa fa-envelope-o"></i> <span class="badge bg-green">6</span>
-							</a></li>
+							</a>
+								<ul id="menu1"
+									class="dropdown-menu list-unstyled msg_list animated fadeInDown"
+									role="menu">
+									<li><a> <span class="image"> <img
+												src="images/img.jpg" alt="Profile Image" />
+										</span> <span> <span>John Smith</span> <span class="time">3
+													mins ago</span>
+										</span> <span class="message"> Film festivals used to be
+												do-or-die moments for movie makers. They were where... </span>
+									</a></li>
+									<li><a> <span class="image"> <img
+												src="images/img.jpg" alt="Profile Image" />
+										</span> <span> <span>John Smith</span> <span class="time">3
+													mins ago</span>
+										</span> <span class="message"> Film festivals used to be
+												do-or-die moments for movie makers. They were where... </span>
+									</a></li>
+									<li><a> <span class="image"> <img
+												src="images/img.jpg" alt="Profile Image" />
+										</span> <span> <span>John Smith</span> <span class="time">3
+													mins ago</span>
+										</span> <span class="message"> Film festivals used to be
+												do-or-die moments for movie makers. They were where... </span>
+									</a></li>
+									<li><a> <span class="image"> <img
+												src="images/img.jpg" alt="Profile Image" />
+										</span> <span> <span>John Smith</span> <span class="time">3
+													mins ago</span>
+										</span> <span class="message"> Film festivals used to be
+												do-or-die moments for movie makers. They were where... </span>
+									</a></li>
+									<li>
+										<div class="text-center">
+											<a> <strong><a href="inbox.html">See All
+														Alerts</strong> <i class="fa fa-angle-right"></i>
+											</a>
+										</div>
+									</li>
+								</ul></li>
 
 						</ul>
 					</nav>
@@ -144,58 +173,34 @@
 
 			</div>
 			<!-- /top navigation -->
+
+
+
 			<div class="right_col" role="main">
-				<div class="row">
-					<div class="col-md-6 col-xs-12">
-						<div class="x_panel">
-							<div class="x_title">
-								<h2>
-									Recommend Enfocement Locations <small>Enter time in 24-hour format</small>
-								</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div class="x_content">
-								<br />
-								<form class="form-horizontal form-label-left input_mask" action="#" method="post" id="form_hour">
-									<div class="form-group">
-										<label class="control-label col-md-3 col-sm-3 col-xs-12">Hour: </label>
-										<div class="col-md-9 col-sm-9 col-xs-12">
-											<input type="text" class="form-control has-feedback-left"
-											id="hour_day" name="hour_day" placeholder="Hour of the Day"> <span
-											class="fa fa-clock-o form-control-feedback left"
-											aria-hidden="true"></span>
-										</div>
-									</div>
-									<div class="form-group"></div>
-									<div class="ln_solid"></div>
-									<div class="form-group">
-										<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-4">
-											<button class="btn btn-success" type="submit" id="submit_hour">Submit</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
+
+				
+				<div class="col-md-12 col-sm-6 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>System Recommendations</h2>
+                                    <h2>Total Incidents per Year</h2>
                                     <div class="clearfix"></div>
                                 </div>
-                                <div class="x_content" id="article_id">
-                                    
+                                <div class="x_content">
+                                    <canvas id="canvas_bar"></canvas>
                                 </div>
                             </div>
                         </div>
-				</div>
-				<div class="row">
-				<div  id="mymap" class="map_container"></div>
-				</div>
-				<div class="row"></div>
+
+
+
+
+
+
 			</div>
 		</div>
 	</div>
-</body>
 
+
+
+</body>
 </html>

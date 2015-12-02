@@ -44,7 +44,7 @@ canvas {
 				<div class="left_col scroll-view">
 
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="index.html" class="site_title"><i
+						<a href="index.jsp" class="site_title"><i
 							class="fa fa-crosshairs"></i> <span>Crime Watch</span></a>
 					</div>
 					<div class="clearfix"></div>
@@ -206,7 +206,7 @@ canvas {
 						<div class="right">
 							<span class="count_top"><i class="fa fa-user"></i>
 								Incident Category</span>
-							<a href="index2.html" style="text-decoration: none;"><div id="data_number" class="count green"></div></a>
+							<a href="index2.jsp" style="text-decoration: none;"><div id="data_number" class="count green"></div></a>
 							<div class="count_bottom" id="incident_category"></div>
 						</div>
 					</div>
@@ -228,7 +228,7 @@ canvas {
 									<li><a class="class" id="2012">2012</a></li>
 								</ul>
 							</div>
-							<a href="index1.html" class="count" id="incidents_2015" style="text-decoration: none;"></a>
+							<a href="index1.jsp" class="count" id="incidents_2015" style="text-decoration: none;"></a>
 							<span class="count_bottom" id="year_comparison"></span>
 						</div>
 					</div>

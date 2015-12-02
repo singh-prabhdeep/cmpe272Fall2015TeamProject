@@ -62,7 +62,7 @@ public class ValidateLogin extends HttpServlet {
 			rd.forward(request, response);
 		} else {
 			//out.print("<p style=\"color:red\">Sorry username or password error</p>");
-			RequestDispatcher rd = request.getRequestDispatcher("index.html");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.include(request, response);
 		}
 
