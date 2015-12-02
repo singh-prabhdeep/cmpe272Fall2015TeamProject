@@ -101,7 +101,7 @@ window.onload = function() {
 						"November", "December" ],
 				datasets : [ {
 					label : "My First dataset",
-					fillColor : "rgba(240,57,40,0.2)",
+					fillColor : "rgba(240,57,40,0.4)",
 					strokeColor : "rgba(220,220,220,1)",
 					pointColor : "rgba(220,220,220,1)",
 					pointStrokeColor : "#fff",
@@ -138,7 +138,7 @@ window.onload = function() {
 				labels : data.returnday,
 				datasets : [ {
 					label : "My First dataset",
-					fillColor : "rgba(220,220,220,0.2)",
+					fillColor : "rgba(0,1,229,0.5)",
 					strokeColor : "rgba(220,220,220,1)",
 					pointColor : "rgba(220,220,220,1)",
 					pointStrokeColor : "#fff",

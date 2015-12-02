@@ -68,10 +68,10 @@
 						<div class="menu_section">
 							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a><i class="fa fa-home"></i> Home </a></li>
-								<li><a><i class="fa fa-edit"></i> Forms </a></li>
-								<li><a><i class="fa fa-desktop"></i> UI Elements </a></li>
-							</ul>
+								<li><a href="welcome.jsp"><i class="fa fa-bar-chart"></i> Dashboard </a></li>
+								<li><a href="recomendationPage.jsp"><i class="fa fa-gears"></i>Recommend Enforcement</a></li>
+								<li><a href="customizedSearch.jsp"><i class="fa fa-search"></i> Incident Search </a></li>
+								<li><a href="TrafficIncidents.jsp"><i class="fa fa-map-marker"></i> Traffic Incidents </a></li>
 						</div>
 
 
