@@ -4,15 +4,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+//packages
+import com.cmpe.loginDatabaseConnectivity.*;
+
 public class GetData {
 	
 	PreparedStatement pst = null;
 	Connection conn;
 	ResultSet rs = null;
-	DBConnection db = new DBConnection();
+	LoginDatabase db = new LoginDatabase();
 	
 	public ResultSet getTopDays() {		
-		conn = db.getConnection();
+		conn = db.getConn();
 		try {
 			pst = conn.prepareStatement("select VAl1, VAL2 from dataextract where ID = ?");
 			pst.setString(1, "QRY_DAY");
@@ -25,7 +28,7 @@ public class GetData {
 	}
 	
 	public ResultSet getMonthlyIncidents() {
-		conn = db.getConnection();
+		conn = db.getConn();
 		try {
 			pst = conn.prepareStatement("select VAL2 from dataextract where ID = ? ORDER BY VAL1;");
 			pst.setString(1, "QRY_MONTH");
@@ -38,7 +41,7 @@ public class GetData {
 	}
 	
 	public ResultSet getHourlyIncidents() {
-		conn = db.getConnection();
+		conn = db.getConn();
 		try {
 			pst = conn.prepareStatement("select VAL2 from dataextract where ID = ? ORDER BY VAL1;");
 			pst.setString(1, "QRY_HOUR");
@@ -51,7 +54,7 @@ public class GetData {
 	}
 	
 	public ResultSet getTopCategory() {
-		conn = db.getConnection();
+		conn = db.getConn();
 		try {
 			pst = conn.prepareStatement("select VAL1, VAL2 from dataextract where ID = ?");
 			pst.setString(1, "QRY_CAT");
@@ -64,7 +67,7 @@ public class GetData {
 	}
 	
 	public ResultSet getTotalIncidents() {
-		conn = db.getConnection();
+		conn = db.getConn();
 		try {
 			pst = conn.prepareStatement("select VAL2 from dataextract where ID = ?");
 			pst.setString(1, "QRY_TOTAL");
@@ -77,7 +80,7 @@ public class GetData {
 	}
 	
 	public ResultSet getTotalTrafficIncidents() {
-		conn = db.getConnection();
+		conn = db.getConn();
 		try {
 			pst = conn.prepareStatement("select VAL2 from dataextract where ID = ?");
 			pst.setString(1, "QRY_TRAFFI");
@@ -90,7 +93,7 @@ public class GetData {
 	}
 	
 	public ResultSet getDrivingInfluence() {
-		conn = db.getConnection();
+		conn = db.getConn();
 		try {
 			pst = conn.prepareStatement("select VAL1, VAL2 from dataextract where ID = ? ORDER BY RAND() LIMIT 1");
 			pst.setString(1, "QRY_CAT");
@@ -103,7 +106,7 @@ public class GetData {
 	}
 	
 	public ResultSet getYearlyData(int year) {
-		conn = db.getConnection();
+		conn = db.getConn();
 		try {
 			pst = conn.prepareStatement("select VAL2 from dataextract where ID = ? AND VAL1 = ?");
 			pst.setString(1, "QRY_YEAR");
@@ -117,7 +120,7 @@ public class GetData {
 	}
 	
 	public ResultSet getYearlyData() {
-		conn = db.getConnection();
+		conn = db.getConn();
 		try {
 			pst = conn.prepareStatement("select VAL1, VAL2 from dataextract where ID = ?");
 			pst.setString(1, "QRY_YEAR");
