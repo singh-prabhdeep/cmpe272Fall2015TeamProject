@@ -41,9 +41,6 @@ public class ValidateLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.setContentType("text/html");
-		//PrintWriter out = response.getWriter();
-
 		String username = request.getParameter("form-username");
 		String password = request.getParameter("form-password");
 		//String remember = request.getParameter("remember");
@@ -61,12 +58,11 @@ public class ValidateLogin extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
 			rd.forward(request, response);
 		} else {
-			//out.print("<p style=\"color:red\">Sorry username or password error</p>");
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-			rd.include(request, response);
+			String message = "Invalid username/password";
+			request.setAttribute("invalid", message);
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
-
-		//out.close();
+		
 	}
 
 
