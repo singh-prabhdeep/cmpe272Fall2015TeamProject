@@ -82,7 +82,9 @@ public class RecommenderService {
 	         }
 	         System.out.println(locationJson.toString());
 	      
-	      }catch(Exception e){e.printStackTrace();}
+	      }catch(Exception e){e.printStackTrace();
+	      return Response.serverError().build();
+	      }
 		return Response.status(200).entity(locationJson.toString()).build();
 	}
 

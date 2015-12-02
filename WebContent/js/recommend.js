@@ -5,7 +5,12 @@ var $post_new_sensor = $('#form_hour');
 	
 	$('#submit_hour').click(function(e) {
 		e.preventDefault();
-		
+		if(document.getElementById('hour_day').value < 24 && document.getElementById('hour_day').value >= 0)
+			{
+			var myNode = document.getElementById("article_id");
+			while (myNode.firstChild) {
+			    myNode.removeChild(myNode.firstChild);
+			}
 		var jsObj = $post_new_sensor.serializeObject()
 			, ajaxObj = {};
 		console.log(JSON.stringify(jsObj));
@@ -17,6 +22,7 @@ var $post_new_sensor = $('#form_hour');
 				error : function(jqXHR, textStatus, errorThrown) {
 					console.log("Error " + jqXHR.getAllResponseHeaders() + " "
 							+ errorThrown);
+					alert("Could not generate recommendation for this hour");
 				},
 				success : function(data) {
 					console.log(data);
@@ -43,14 +49,22 @@ var $post_new_sensor = $('#form_hour');
 			};
 
 			$.ajax(ajaxObj);
+			}
+		else{
+			
+			warning = $('<div class="bad alert">').html( 'Please enter hour in 24-Hour format' );
+			$('#hour_day').parent().addClass('bad');
+			$('#hour_day').parent().find('.alert').html('Please enter hour in 24-Hour format');
+			$('#hour_day').parent().append(warning);
+		}
 	});
 });
 
 function initialize() {
 	  geocoder = new google.maps.Geocoder();
-	  var latlng = new google.maps.LatLng(37.3382, -121.8863);
+	  var latlng = new google.maps.LatLng(37.773972, -122.431297);
 	  var mapOptions = {
-	    zoom: 14,
+	    zoom: 11,
 	    center: latlng,
 	    mapTypeId: google.maps.MapTypeId.ROADMAP
 	  }

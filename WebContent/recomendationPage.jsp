@@ -21,7 +21,6 @@
 <link rel="stylesheet" type="text/css"
 	href="css/maps/jquery-jvectormap-2.0.1.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
-<link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
 <style type="text/css">
@@ -157,9 +156,9 @@
 							<div class="x_content">
 								<br />
 								<form class="form-horizontal form-label-left input_mask" action="#" method="post" id="form_hour">
-									<div class="form-group">
-										<label class="control-label col-md-3 col-sm-3 col-xs-12">Hour: </label>
-										<div class="col-md-9 col-sm-9 col-xs-12">
+									<div class="item form-group">
+										<label class="control-label col-md-1 col-sm-3 col-xs-12">Hour: </label>
+										<div class="col-md-6 col-sm-9 col-xs-12">
 											<input type="text" class="form-control has-feedback-left"
 											id="hour_day" name="hour_day" placeholder="Hour of the Day"> <span
 											class="fa fa-clock-o form-control-feedback left"
