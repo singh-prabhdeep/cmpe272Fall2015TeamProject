@@ -33,7 +33,7 @@ public class TrafficService {
 		int weatherCondtion = Integer.parseInt(jsonobj.optString("weather_condition"));
 		int lightCondtion = Integer.parseInt(jsonobj.optString("light_condition"));
 		int specialCondtion = Integer.parseInt(jsonobj.optString("special_condition"));
-		String sql = "Select latitude,longitude from ukdata where ";
+		String sql = "Select latitude,longitude from UKDATA where ";
 		if(roadCondtion!=0)
 		{
 			sql = sql + "Road_Surface_Conditions = "+roadCondtion+" and ";

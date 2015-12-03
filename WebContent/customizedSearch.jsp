@@ -37,8 +37,8 @@
 <script type="text/javascript" src="js/customizedSearch.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
-<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
+<script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+<script src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
 <meta name="viewport" content="initial-scale = 1, user-scalable = no">
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -91,7 +91,7 @@
 						class="main_menu_side hidden-print main_menu">
 
 						<div class="menu_section">
-							<h3>General</h3>
+						<h3>&nbsp;</h3>
 							<ul class="nav side-menu">
 								<li><a href="welcome.jsp"><i class="fa fa-bar-chart"></i> Dashboard </a></li>
 								<li><a href="recomendationPage.jsp"><i class="fa fa-gears"></i>Recommend Enforcement</a></li>
@@ -138,58 +138,13 @@
 								<ul
 									class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 									<li><a href="javascript:;"> Profile</a></li>
-									<li><a href="javascript:;"> <span
-											class="badge bg-red pull-right">50%</span> <span>Settings</span>
+									<li><a href="javascript:;"> <span>Settings</span>
 									</a></li>
 									<li><a href="javascript:;">Help</a></li>
 									<li><a href="login.html"><i
 											class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 								</ul></li>
 
-							<li role="presentation" class="dropdown"><a
-								href="javascript:;" class="dropdown-toggle info-number"
-								data-toggle="dropdown" aria-expanded="false"> <i
-									class="fa fa-envelope-o"></i> <span class="badge bg-green">6</span>
-							</a>
-								<ul id="menu1"
-									class="dropdown-menu list-unstyled msg_list animated fadeInDown"
-									role="menu">
-									<li><a> <span class="image"> <img
-												src="images/img.jpg" alt="Profile Image" />
-										</span> <span> <span>John Smith</span> <span class="time">3
-													mins ago</span>
-										</span> <span class="message"> Film festivals used to be
-												do-or-die moments for movie makers. They were where... </span>
-									</a></li>
-									<li><a> <span class="image"> <img
-												src="images/img.jpg" alt="Profile Image" />
-										</span> <span> <span>John Smith</span> <span class="time">3
-													mins ago</span>
-										</span> <span class="message"> Film festivals used to be
-												do-or-die moments for movie makers. They were where... </span>
-									</a></li>
-									<li><a> <span class="image"> <img
-												src="images/img.jpg" alt="Profile Image" />
-										</span> <span> <span>John Smith</span> <span class="time">3
-													mins ago</span>
-										</span> <span class="message"> Film festivals used to be
-												do-or-die moments for movie makers. They were where... </span>
-									</a></li>
-									<li><a> <span class="image"> <img
-												src="images/img.jpg" alt="Profile Image" />
-										</span> <span> <span>John Smith</span> <span class="time">3
-													mins ago</span>
-										</span> <span class="message"> Film festivals used to be
-												do-or-die moments for movie makers. They were where... </span>
-									</a></li>
-									<li>
-										<div class="text-center">
-											<a> <strong><a href="inbox.html">See All
-														Alerts</strong> <i class="fa fa-angle-right"></i>
-											</a>
-										</div>
-									</li>
-								</ul></li>
 
 						</ul>
 					</nav>

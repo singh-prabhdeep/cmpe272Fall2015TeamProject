@@ -8,6 +8,7 @@
 <script type="text/javascript" src="js/polyfill.js"></script>
 <script type="text/javascript" src="js/hostfile.js"></script>
 <script type="text/javascript" src="js/recommend.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <!-- Bootstrap core CSS -->
 
@@ -81,7 +82,7 @@
 						class="main_menu_side hidden-print main_menu">
 
 						<div class="menu_section">
-							<h3>General</h3>
+						<h3>&nbsp;</h3>
 							<ul class="nav side-menu">
 								<li><a href="welcome.jsp"><i class="fa fa-bar-chart"></i> Dashboard </a></li>
 								<li><a href="recomendationPage.jsp"><i class="fa fa-gears"></i>Recommend Enforcement</a></li>
@@ -128,19 +129,13 @@
 								<ul
 									class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 									<li><a href="javascript:;"> Profile</a></li>
-									<li><a href="javascript:;"> <span
-											class="badge bg-red pull-right">50%</span> <span>Settings</span>
+									<li><a href="javascript:;"> <span>Settings</span>
 									</a></li>
 									<li><a href="javascript:;">Help</a></li>
 									<li><a href="login.html"><i
 											class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 								</ul></li>
 
-							<li role="presentation" class="dropdown"><a
-								href="javascript:;" class="dropdown-toggle info-number"
-								data-toggle="dropdown" aria-expanded="false"> <i
-									class="fa fa-envelope-o"></i> <span class="badge bg-green">6</span>
-							</a></li>
 
 						</ul>
 					</nav>

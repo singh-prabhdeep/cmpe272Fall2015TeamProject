@@ -102,7 +102,7 @@ public class LoginDatabase {
 	public ArrayList<String> getDistinctCategories() {
 
 	    Statement stmt = null;
-	    String query = "SELECT DISTINCT(CATEGORY) FROM customizedsearchcrimedata";
+	    String query = "SELECT DISTINCT(CATEGORY) FROM CUSTOMIZEDSEARCHCRIMEDATA";
         ArrayList<String> list = new ArrayList<String>();
         
 	    try {
@@ -131,7 +131,7 @@ public class LoginDatabase {
 	public ArrayList<String> getDistinctYears() {
 
 	    Statement stmt = null;
-	    String query = "SELECT DISTINCT(YEAR) FROM customizedsearchcrimedata";
+	    String query = "SELECT DISTINCT(YEAR) FROM CUSTOMIZEDSEARCHCRIMEDATA ORDER BY YEAR";
         ArrayList<String> list = new ArrayList<String>();
         
 	    try {
@@ -159,7 +159,7 @@ public class LoginDatabase {
 	
 	public ArrayList<String> getDistinctMonths() {
 	    Statement stmt = null;
-	    String query = "SELECT DISTINCT(MONTH) FROM customizedsearchcrimedata";
+	    String query = "SELECT DISTINCT(MONTH) FROM CUSTOMIZEDSEARCHCRIMEDATA ORDER BY MONTH";
         ArrayList<String> list = new ArrayList<String>();
         
 	    try {
@@ -190,7 +190,7 @@ public class LoginDatabase {
 		ResultSet rs = null;
 
 		try {
-			pst = conn.prepareStatement("select X,Y,COUNT from cmpe272_fall2015_finalproj.customizedsearchcrimedata WHERE CATEGORY = ? AND MONTH = ? AND YEAR = ?");
+			pst = conn.prepareStatement("select X,Y,COUNT from cmpe272_fall2015_finalproj.CUSTOMIZEDSEARCHCRIMEDATA WHERE CATEGORY = ? AND MONTH = ? AND YEAR = ?");
 			pst.setString(1, category);
 			pst.setString(2, month);
 			pst.setString(3, year);
