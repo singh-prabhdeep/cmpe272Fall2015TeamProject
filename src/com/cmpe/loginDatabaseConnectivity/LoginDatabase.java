@@ -190,7 +190,7 @@ public class LoginDatabase {
 		ResultSet rs = null;
 
 		try {
-			pst = conn.prepareStatement("select X,Y from cmpe272_fall2015_finalproj.customizedsearchcrimedata WHERE CATEGORY = ? AND MONTH = ? AND YEAR = ?");
+			pst = conn.prepareStatement("select X,Y,COUNT from cmpe272_fall2015_finalproj.customizedsearchcrimedata WHERE CATEGORY = ? AND MONTH = ? AND YEAR = ?");
 			pst.setString(1, category);
 			pst.setString(2, month);
 			pst.setString(3, year);
@@ -203,6 +203,7 @@ public class LoginDatabase {
 				JSONObject row = new JSONObject();
 				row.put("longitude", rs.getString(1));
 				row.put("latitude", rs.getString(2));
+				row.put("count", rs.getString(3));
 				jarray.put(row);
 			}
 			toRet = jarray.toString();

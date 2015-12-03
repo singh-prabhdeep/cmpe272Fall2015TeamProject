@@ -6,26 +6,6 @@
  if(isLoggedIn != "user")
  	response.sendRedirect("index.jsp");
 %>
-<script type="text/javascript" src="js/jquery-min.js"></script>
-<script type="text/javascript" src="js/polyfill.js"></script>
-<script src="js/hostfile.js"></script>
-<script type="text/javascript" src="js/customizedSearch.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
-<meta name="viewport" content="initial-scale = 1, user-scalable = no">
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<link href="fonts/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/animate.min.css" rel="stylesheet">
-
-<!-- Custom styling plus plugins -->
-<link href="css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="css/maps/jquery-jvectormap-2.0.1.css" />
-<link href="css/icheck/flat/green.css" rel="stylesheet" />
-<link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 .map_container{
     position: relative;
@@ -41,7 +21,38 @@
     margin: 0;
     padding: 0;
 }
+.labels {
+    color: white;
+    background-color: red;
+    font-family:"Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    width: 30px;
+    white-space: nowrap;
+}
 </style>
+<script type="text/javascript" src="js/jquery-min.js"></script>
+<script type="text/javascript" src="js/polyfill.js"></script>
+<script src="js/hostfile.js"></script>
+<script type="text/javascript" src="js/customizedSearch.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
+<meta name="viewport" content="initial-scale = 1, user-scalable = no">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+
+<!-- Custom styling plus plugins -->
+<link href="css/custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="css/maps/jquery-jvectormap-2.0.1.css" />
+<link href="css/icheck/flat/green.css" rel="stylesheet" />
+<link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 <body class="nav-md">
