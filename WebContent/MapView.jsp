@@ -1,11 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Visualize Locations</title>
-<% String isLoggedIn = (String)session.getAttribute("isLoggedIn"); 
- if(isLoggedIn != "user")
- 	response.sendRedirect("index.jsp");
-%>
+<meta charset="UTF-8">
+<title>Traffic Incidents</title>
+<script type="text/javascript" src="js/jquery-min.js"></script>
+<script type="text/javascript" src="js/polyfill.js"></script>
+<script type="text/javascript" src="js/hostfile.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- Bootstrap core CSS -->
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+
+<!-- Custom styling plus plugins -->
+<link href="css/custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="css/maps/jquery-jvectormap-2.0.1.css" />
+<link href="css/icheck/flat/green.css" rel="stylesheet" />
+<link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+<script  type="text/javascript" src="js/mapview.js"></script>
+
 <style type="text/css">
 .map_container{
     position: relative;
@@ -21,41 +39,12 @@
     margin: 0;
     padding: 0;
 }
-.labels {
-    color: white;
-    background-color: red;
-    font-family:"Lucida Grande", "Arial", sans-serif;
-    font-size: 10px;
-    text-align: center;
-    width: 30px;
-    white-space: nowrap;
-}
 </style>
-<script type="text/javascript" src="js/jquery-min.js"></script>
-<script type="text/javascript" src="js/polyfill.js"></script>
-<script src="js/hostfile.js"></script>
-<script type="text/javascript" src="js/customizedSearch.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-<script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
-<script src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<meta name="viewport" content="initial-scale = 1, user-scalable = no">
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<link href="fonts/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/animate.min.css" rel="stylesheet">
-
-<!-- Custom styling plus plugins -->
-<link href="css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="css/maps/jquery-jvectormap-2.0.1.css" />
-<link href="css/icheck/flat/green.css" rel="stylesheet" />
-<link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
-
+<% String isLoggedIn = (String)session.getAttribute("isLoggedIn"); 
+ if(isLoggedIn != "user")
+ 	response.sendRedirect("index.jsp");
+%>
 </head>
-<body>
 <body class="nav-md">
 
 	<div class="container body">
@@ -140,83 +129,27 @@
 								<ul
 									class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 									<li><a href="javascript:;"> Profile</a></li>
-									<li><a href="javascript:;"> <span>Settings</span>
+									<li><a href="javascript:;"><span>Settings</span>
 									</a></li>
 									<li><a href="javascript:;">Help</a></li>
 									<li><a href="login.html"><i
 											class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 								</ul></li>
 
-
 						</ul>
 					</nav>
 				</div>
 
 			</div>
-
-
-
 			<!-- /top navigation -->
 			<div class="right_col" role="main">
-				<div class="row">
-					<div class="col-md-4 col-sm-4 col-xs-12">
-						<div class="x_panel tile fixed_height_320">
-							<div class="x_title">
-								<h2>Query Selection:</h2>
-								<div class="clearfix"></div>
-							</div>
-
-							<form role="form" action="#" method="post" id="form_search">
-								<div class="form-group">
-									<label for="yearSelect">Select Year:</label> 
-									<select name="yearSelect"
-										class="form-control" id="yearSelect">
-									</select>
-								</div>
-
-								<div class="form-group">
-									<label for="monthSelect">Select Month:</label> 
-									<select name="monthSelect"
-										class="form-control" id="monthSelect">
-									</select>
-								</div>
-
-								<div class="form-group">
-									<label for="categorySelect">Select Category:</label> 
-									<select name="categorySelect"
-										class="form-control" id="categorySelect">
-									</select>
-								</div>
-								<button type="button" id="executeQueryButton"
-									class="btn btn-primary btn-block">Find Locations</button>
-							</form>
-
-							<!--
-							<div style="height: 50%">
-								<canvas id="canvas" height="450" width="450"></canvas>
-							</div>
-							-->
-						</div>
-					</div>
-					<div class="col-md-8 col-sm-8 col-xs-12">
-						<div  id="mymap" class="map_container"></div>
-					</div>
+			<div class="row">
+				<div  id="mymap" class="map_container"></div>
 				</div>
 			</div>
-			
+			</div>
+			</div>
+			</div>
 
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-	</div>
 </body>
 </html>

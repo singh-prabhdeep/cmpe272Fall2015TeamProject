@@ -1,6 +1,9 @@
 package com.cmpe.customizedSearch;
 
 import java.io.File;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -156,5 +159,49 @@ public class customizedSearchService {
 	    	  e.printStackTrace();
 	      }
 		return Response.status(200).entity(locations).build();
+	}
+	@POST
+	@Path("/getNearbyIncidents")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response getNearbyIncidents(String incomingdata) throws JSONException
+	{
+		JSONObject locdata = new JSONObject();
+		try
+		{
+		System.out.println(incomingdata);
+		//String x = "37.7564864109309";
+		//String y = "-122.406539115148";
+		JSONObject jsonobj = new JSONObject(incomingdata);
+		String x = jsonobj.optString("x");
+		String y = jsonobj.optString("y");
+		String sql = "SELECT X,Y,COUNT,CATEGORY FROM CUSTOMIZEDSEARCHCRIMEDATA a WHERE (acos(sin(cast(`X` as decimal(16,13)) * 0.0175) * sin("+x+" * 0.0175)+ cos(cast(`X` as decimal(16,13)) * 0.0175) * cos("+x+" * 0.0175) * cos(("+y+" * 0.0175) - (cast(`Y` as decimal(16,13)) * 0.0175)) ) * 3959 <= 0.5)";
+		System.out.println(sql);
+		LoginDatabase db = new LoginDatabase();
+		Connection conn = db.getConn();
+		PreparedStatement prep = conn.prepareStatement(sql);
+		//prep.setFloat(1, (float) 37.7564864109309);
+		//prep.setFloat(2, (float) 37.7564864109309);
+		//prep.setFloat(3, (float) -122.406539115148);
+		ResultSet rs =  prep.executeQuery();
+		JSONArray jarray = new JSONArray();
+		while(rs.next())
+		{
+			JSONObject row = new JSONObject();
+			row.put("latitude", rs.getString(1));
+			row.put("longitude", rs.getString(2));
+			row.put("count", rs.getString(3));
+			row.put("category", rs.getString(4));
+			jarray.put(row);
+		}
+		conn.close();
+		locdata.put("locationData", jarray);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return Response.status(200).entity(locdata).build();
+		
 	}
 }

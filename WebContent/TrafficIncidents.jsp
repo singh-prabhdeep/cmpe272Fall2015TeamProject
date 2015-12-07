@@ -87,6 +87,7 @@
 								<li><a href="recomendationPage.jsp"><i class="fa fa-gears"></i>Recommend Enforcement</a></li>
 								<li><a href="customizedSearch.jsp"><i class="fa fa-search"></i> Incident Search </a></li>
 								<li><a href="TrafficIncidents.jsp"><i class="fa fa-map-marker"></i> Traffic Incidents </a></li>
+								<li><a href="MapView.jsp"><i class="fa fa-map-marker"></i> Map View </a></li>
 							</ul>
 						</div>
 
