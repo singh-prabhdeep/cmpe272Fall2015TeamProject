@@ -1,5 +1,6 @@
 var map;
 var markerCluster;
+var markers = [];
 $(document).ready(function() {
 	initialize();
 	
@@ -37,9 +38,12 @@ function initialize() {
 										+ errorThrown);
 							},
 							success : function(data) {
+								for (var i = 0; i < markers.length; i++) {
+									markers[i].setMap(null);
+								}
+								markers = [];
 								console.log(data.locationData);
 								//initialize();
-								var markers = [];
 								for(var key in data.locationData){
 									var loc = data.locationData[key];
 									
@@ -63,6 +67,6 @@ function initialize() {
 
 				});
 			
-		});
-		
-	}
+		});	
+}
+

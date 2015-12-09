@@ -23,7 +23,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 <script  type="text/javascript" src="js/trafficincidents.js"></script>
-
+<script type="text/javascript" src="js/custom.js"></script>
 <style type="text/css">
 .map_container{
     position: relative;

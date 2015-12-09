@@ -20,38 +20,47 @@
 	href="css/maps/jquery-jvectormap-2.0.1.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
-<script  type="text/javascript" src="js/mapview.js"></script>
+<script
+	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script type="text/javascript"
+	src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+<script type="text/javascript" src="js/mapview.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 
 <style type="text/css">
-.map_container{
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+.map_container {
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
 }
-.map_container .map_canvas{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
+
+.map_container .map_canvas {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#floating-panel {
+	top: 10px;
+	left: 25%;
+	padding: 5px;
+	text-align: center;
+	line-height: 30px;
 }
 </style>
-<% String isLoggedIn = (String)session.getAttribute("isLoggedIn"); 
- if(isLoggedIn != "user")
- 	response.sendRedirect("index.jsp");
+<%
+	String isLoggedIn = (String) session.getAttribute("isLoggedIn");
+	if (isLoggedIn != "user")
+		response.sendRedirect("index.jsp");
 %>
 </head>
 <body class="nav-md">
-
 	<div class="container body">
-
-
 		<div class="main_container">
-
 			<div class="col-md-3 left_col">
 				<div class="left_col scroll-view">
 
@@ -81,13 +90,18 @@
 						class="main_menu_side hidden-print main_menu">
 
 						<div class="menu_section">
-						<h3>&nbsp;</h3>
+							<h3>&nbsp;</h3>
 							<ul class="nav side-menu">
-								<li><a href="welcome.jsp"><i class="fa fa-bar-chart"></i> Dashboard </a></li>
-								<li><a href="recomendationPage.jsp"><i class="fa fa-gears"></i>Recommend Enforcement</a></li>
-								<li><a href="customizedSearch.jsp"><i class="fa fa-search"></i> Incident Search </a></li>
-								<li><a href="TrafficIncidents.jsp"><i class="fa fa-map-marker"></i> Traffic Incidents </a></li>
-								<li><a href="MapView.jsp"><i class="fa fa-map-marker"></i> Map View </a></li>
+								<li><a href="welcome.jsp"><i class="fa fa-bar-chart"></i>
+										Dashboard </a></li>
+								<li><a href="recomendationPage.jsp"><i
+										class="fa fa-gears"></i>Recommend Enforcement</a></li>
+								<li><a href="customizedSearch.jsp"><i
+										class="fa fa-search"></i> Incident Search </a></li>
+								<li><a href="TrafficIncidents.jsp"><i
+										class="fa fa-map-marker"></i> Traffic Incidents </a></li>
+								<li><a href="MapView.jsp"><i class="fa fa-map-marker"></i>
+										Map View </a></li>
 							</ul>
 						</div>
 
@@ -129,8 +143,7 @@
 								<ul
 									class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 									<li><a href="javascript:;"> Profile</a></li>
-									<li><a href="javascript:;"><span>Settings</span>
-									</a></li>
+									<li><a href="javascript:;"><span>Settings</span> </a></li>
 									<li><a href="javascript:;">Help</a></li>
 									<li><a href="login.html"><i
 											class="fa fa-sign-out pull-right"></i> Log Out</a></li>
@@ -143,13 +156,12 @@
 			</div>
 			<!-- /top navigation -->
 			<div class="right_col" role="main">
-			<div class="row">
-				<div  id="mymap" class="map_container"></div>
+				<div class="row">
+					<div id="mymap" class="map_container"></div>
 				</div>
 			</div>
-			</div>
-			</div>
-			</div>
+		</div>
+	</div>
 
 </body>
 </html>
